@@ -1,0 +1,405 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+:root {
+  color-scheme: dark;
+}
+
+body {
+  animation: fadeIn 1.2s;
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  background-image: linear-gradient(
+    32deg,
+    rgba(8, 8, 8, 0.74) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+}
+
+.button-alura {
+  border: 2px solid #2b7cdf;
+  transition: box-shadow 0.5s;
+}
+
+.alura-logo {
+  transition: filter 0.5s;
+}
+
+.footer-shadow {
+  box-shadow: 0 -0.5rem 1rem #257be595;
+}
+
+.navbar-shadow {
+  box-shadow: 0 0.5rem 5rem #257be5d4;
+}
+
+.button-alura:hover {
+  box-shadow: 0 0 1.2rem #257be5d4;
+}
+
+.alura-logo:hover {
+  filter: drop-shadow(0 0 0.5rem #257be595);
+  transition: filter 0.5s;
+}
+
+.buttons-svg-mobile svg {
+  display: none;
+}
+
+.button-text.active {
+  display: block;
+}
+
+.card {
+  transition: transform 400ms ease-in-out;
+  transform: scale(1);
+  width: 100%;
+  max-width: 500px; /* Ajusta el tamaño máximo */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.header-card img {
+  border: 4px solid;
+  border-radius: 1rem !important;
+}
+
+.header-card {
+  border-radius: 1rem !important;
+}
+
+.hide-header-mobile {
+  display: block;
+}
+
+input:focus {
+  outline: none;
+}
+
+.scrollbar-hidden {
+  overflow-y: hidden;
+}
+
+.scrollbar-hidden:hover {
+  overflow-y: auto;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0; /* Oculta el scrollbar */
+}
+
+.scrollbar-hidden:hover::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+}
+
+.category-title {
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.video-section {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 1fr);
+  gap: 20px; /* Espacio entre videos */
+  padding-bottom: 20px; /* Espacio para el scrollbar */
+  overflow-x: auto;
+  scrollbar-color: #3484ec transparent;
+  scrollbar-width: thin;
+}
+
+.video-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+.video-section::-webkit-scrollbar-thumb {
+  background-color: #3484ec;
+  border-radius: 10px;
+}
+
+.video-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.action-buttons {
+  width: 100%;
+  max-width: 500px; 
+}
+
+.modal-delete {
+  width: 550px !important;
+  height: 350px !important;
+}
+
+@media screen and (min-width: 1024px) {
+  /* Pantalla de escritorio */
+  .category-title {
+    text-align: center;
+  }
+  .video-section {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Pantalla de tablet */
+  .category-title {
+    text-align: center;
+  }
+  .video-section {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  .title-tablet {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 250px !important;
+  }
+
+  .modal-buttons {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* Pantalla móvil */
+  .category-title {
+    text-align: left;
+  }
+  .video-section {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+  .modal {
+    width: 90%;
+    height: 900px;
+  }
+  .modal-buttons {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; 
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; 
+  position: relative;
+}
+
+.modal-title {
+  text-align: center;
+
+  width: 100%;
+  gap: 10px;
+}
+
+.title-mobile {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 300px;
+  position: static;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .hide-header-mobile {
+    display: none;
+  }
+
+  .modal {
+    width: 750px;
+    height: 900px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .buttons-svg-mobile svg {
+    display: block;
+    height: 50px;
+  }
+
+  .icon-circle-plus {
+    height: 50px !important;
+  }
+  .button-text.active {
+    display: block;
+  }
+
+  .button-text.inactive {
+    display: none;
+  }
+
+  .button-alura.active {
+    border: 2px solid #2b7cdf;
+    width: 240px !important;
+    height: 70px !important;
+    border-radius: 50px;
+    font-size: 20px;
+  }
+
+  .navbar-new-video-button {
+    border: none !important;
+  }
+
+  .card-img {
+    width: 270px;
+    height: 140px;
+  }
+
+  .navbar-shadow {
+    box-shadow: 0 0.5rem 1rem #3b93ff87;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hide-header-mobile {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3484ec;
+  border-radius: 50px;
+}
+
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle7124 0.5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow046 0.5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+.button-clean {
+  border: 2px solid #ffffff;
+}
