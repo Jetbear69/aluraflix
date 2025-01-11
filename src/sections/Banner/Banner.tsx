@@ -5,7 +5,7 @@ function Banner({ children }: BannerProps) {
         <section className="relative border-b-4 border-primary overflow-hidden" style={{ height: "820px" }}>
             <img
                 className="relative left-0 object-bottom -z-50 object-cover w-full bottom-0 opacity-60 "
-                src="/public/banner.png"
+                src="/banner.png"
                 alt="banner"
                 style={{ height: "920px"}}
             />
